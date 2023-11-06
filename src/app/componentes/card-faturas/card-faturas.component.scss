@@ -1,7 +1,7 @@
 .card{
     width: 100%;
     height: 15rem;
-    padding: 1rem;
+    // padding: 1rem;
     background-color: var(--background-secondary);
     border-radius: 20px;
     border: 2px solid orange;
@@ -9,18 +9,28 @@
 
 .card-container{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding: 0 1rem;
+    align-items: center;
+    flex-wrap: wrap;
     width: 100%;
     height: 100%;
-    border: 2px solid greenyellow;
+    // border: 2px solid greenyellow;
 }
 
 .titulo-card-total-liquido,
 .titulo-card-fatura-atual,
 .titulo-card-proxima-fatura{
+    height: fit-content;
     font-family: 'Roboto';
     color: #d5d5d5;
     font-size: 10pt;
-    padding-top: 2rem;
-    border: 2px solid purple;
+    // border: 2px solid purple;
+}
+
+.cards{
+    border: 1px solid red;
+    width: 12rem;
+    height: 6rem;
+    border-radius: 10px;
 }
