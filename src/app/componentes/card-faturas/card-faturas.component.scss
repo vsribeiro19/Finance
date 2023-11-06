@@ -1,0 +1,26 @@
+.card{
+    width: 100%;
+    height: 15rem;
+    padding: 1rem;
+    background-color: var(--background-secondary);
+    border-radius: 20px;
+    border: 2px solid orange;
+}
+
+.card-container{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+    border: 2px solid greenyellow;
+}
+
+.titulo-card-total-liquido,
+.titulo-card-fatura-atual,
+.titulo-card-proxima-fatura{
+    font-family: 'Roboto';
+    color: #d5d5d5;
+    font-size: 10pt;
+    padding-top: 2rem;
+    border: 2px solid purple;
+}
