@@ -3,5 +3,17 @@
     height: 100vh;
     background-color: var(--sidebar);
     font-family: 'Roboto';
-    color:#fff;
+    color: #fff;
+}
+
+.cardIconesLateral li span {
+    display: flex;
+    justify-content: center;
+    line-height: 5rem;
+    color: azure;
+    cursor: pointer;
+}
+
+span:hover {
+    background-color: var(--hover-icons);
 }
