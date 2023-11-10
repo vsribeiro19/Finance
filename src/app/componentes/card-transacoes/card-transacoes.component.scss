@@ -1,0 +1,33 @@
+.cabecalho-card-transacoes {
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--background-secondary);
+    padding: 1rem;
+    font-family: 'Roboto';
+    color: #b1b1b1;
+    border-radius: 10px;
+    margin-bottom: .5rem;
+    // border: 2px solid blueviolet;
+}
+
+.card-transacoes {
+    display: flex;
+    background-color: var(--background-secondary);
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 2px;
+}
+
+.card-transacoes,
+span {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    font-family: 'Roboto';
+    color: #b1b1b1;
+    font-size: 10pt;
+}
+
+.transacoes span {
+    color: #d5d5d5;
+}

@@ -1,0 +1,12 @@
+<div class="cabecalho-card-transacoes">
+    <span>Compra</span>
+    <span>Tipo Compra</span>
+    <span>Status</span>
+    <span>Valor R$</span>
+</div>
+<div *ngFor="let transacao of dadosTransacao" class="card-transacoes transacoes">
+    <span>{{transacao.compra}}</span>
+    <span>{{transacao.tipoCompra}}</span>
+    <span>{{transacao.status}}</span>
+    <span>{{transacao.valor}}</span>
+</div>

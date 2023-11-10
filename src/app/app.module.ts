@@ -5,13 +5,14 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './componentes/home/home.component';
 import { SidebarComponent } from './componentes/sidebar/sidebar.component';
 import { CardFaturasComponent } from './componentes/card-faturas/card-faturas.component';
-
+import { CardTransacoesComponent } from './componentes/card-transacoes/card-transacoes.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     SidebarComponent,
-    CardFaturasComponent
+    CardFaturasComponent,
+    CardTransacoesComponent
   ],
   imports: [
     BrowserModule,
