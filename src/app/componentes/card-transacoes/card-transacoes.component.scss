@@ -31,3 +31,8 @@ span {
 .transacoes span {
     color: #d5d5d5;
 }
+
+.transacoes:hover{
+    background-color: rgba(46, 53, 72, .4);
+    cursor: pointer;
+}

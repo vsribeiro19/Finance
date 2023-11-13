@@ -2,42 +2,55 @@
     width: 100%;
     height: 10rem;
     background-color: var(--background-secondary);
-    border-radius: 20px;
+    border-radius: 10px;
 }
 
 .card-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 0 1rem;
     align-items: center;
     flex-wrap: wrap;
     width: 100%;
     height: 100%;
-    // border: 2px solid greenyellow;
 }
 
 .titulo-card {
-    height: fit-content;
     font-family: 'Roboto';
-    color: #d5d5d5;
+    color: #0B0B09;
     font-size: 10pt;
+    font-weight: 500;
 }
 
 #card-total-liquido {
-    background-color: #197817;
+    background-color: #56F452;
+    padding: 1rem; 
 }
 
 #card-fatura-atual {
-    background-color: #1957A0;
+    background-color: #75C1F3;
+    padding: 1rem;
 }
 
 #card-proxima-fatura {
-    background-color: #C46914;
+    background-color: #F9DB49;
+    padding: 1rem;
 }
 
 .cards {
-    // border: 1px solid red;
-    width: 15rem;
-    height: 6rem;
-    border-radius: 10px;
+    width: 20rem;
+    height: 8rem;
+}
+
+.cards hr{
+    border: 1px solid #3f3f3f;
+    margin-top: .70rem;
+}
+
+.cards h1{
+    display: flex;
+    height: 5rem;
+    align-items: center;
+    font-size: 20pt;
+    // font-family: 'Roboto Flex';
 }
