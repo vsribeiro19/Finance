@@ -1,3 +1,4 @@
+import { TipoCompra } from './../../enums/tipo-compra.enum';
 import { Component } from '@angular/core';
 
 @Component({
