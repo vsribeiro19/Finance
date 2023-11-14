@@ -6,13 +6,15 @@ import { HomeComponent } from './componentes/home/home.component';
 import { SidebarComponent } from './componentes/sidebar/sidebar.component';
 import { CardFaturasComponent } from './componentes/card-faturas/card-faturas.component';
 import { CardTransacoesComponent } from './componentes/card-transacoes/card-transacoes.component';
+import { BotaoNovaTransacaoComponent } from './componentes/card-transacoes/botao-nova-transacao/botao-nova-transacao.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     SidebarComponent,
     CardFaturasComponent,
-    CardTransacoesComponent
+    CardTransacoesComponent,
+    BotaoNovaTransacaoComponent
   ],
   imports: [
     BrowserModule,
