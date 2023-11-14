@@ -1,0 +1,20 @@
+.btn-nova-transacao {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+button {
+    width: 135px;
+    height: 35px;
+    border-radius: 10px;
+    font-size: 10pt;
+    background-color: #1957A0;
+    color: #fff;
+    border: 1px solid #B9B8B8;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #114c8f;
+}
