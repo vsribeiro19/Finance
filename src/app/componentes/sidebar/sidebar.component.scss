@@ -17,3 +17,13 @@
 span:hover {
     background-color: var(--hover-icons);
 }
+
+
+// media queries
+
+@media(max-width: 450px){
+    .navbarLateral{
+        display: none;
+    }
+}
+

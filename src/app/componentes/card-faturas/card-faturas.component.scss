@@ -24,7 +24,7 @@
 
 #card-total-liquido {
     background-color: #56F452;
-    padding: 1rem; 
+    padding: 1rem;
 }
 
 #card-fatura-atual {
@@ -40,14 +40,15 @@
 .cards {
     width: 20rem;
     height: 8rem;
+    cursor: pointer;
 }
 
-.cards hr{
+.cards hr {
     border: 1px solid #3f3f3f;
     margin-top: .70rem;
 }
 
-.cards h1{
+.cards h1 {
     display: flex;
     height: 5rem;
     align-items: center;

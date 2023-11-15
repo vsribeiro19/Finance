@@ -19,3 +19,18 @@
 button:hover {
     background-color: #114c8f;
 }
+
+
+// media queries
+
+@media(max-width:450px){
+    .btn-nova-transacao{
+        position: relative;
+        top: 12rem;
+    }
+    .btn-nova-transacao button{
+        width: 100px;
+        height: 30px;
+        font-size: 9pt;
+    }
+}

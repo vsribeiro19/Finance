@@ -36,3 +36,16 @@ span {
     background-color: rgba(46, 53, 72, .4);
     cursor: pointer;
 }
+
+// media queries
+
+@media(max-width:450px){
+    .cabecalho-card-transacoes{
+        width: 100%;
+        margin-top: 12rem;
+    }
+    .cabecalho-card-transacoes span{
+        width: 100%;
+        font-size: 7.7pt;   
+    }
+}
