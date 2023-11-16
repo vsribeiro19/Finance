@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-botao-nova-transacao',
@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./botao-nova-transacao.component.scss']
 })
 export class BotaoNovaTransacaoComponent {
+  formValorTransacao = new FormControl();
 }

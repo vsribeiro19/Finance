@@ -1,3 +1,4 @@
+import { CurrencyMaskModule } from 'ng2-currency-mask';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -7,6 +8,8 @@ import { SidebarComponent } from './componentes/sidebar/sidebar.component';
 import { CardFaturasComponent } from './componentes/card-faturas/card-faturas.component';
 import { CardTransacoesComponent } from './componentes/card-transacoes/card-transacoes.component';
 import { BotaoNovaTransacaoComponent } from './componentes/card-transacoes/botao-nova-transacao/botao-nova-transacao.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +21,10 @@ import { BotaoNovaTransacaoComponent } from './componentes/card-transacoes/botao
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CurrencyMaskModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
