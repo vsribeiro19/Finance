@@ -9,6 +9,9 @@ import { CardTransacoesComponent } from './componentes/card-transacoes/card-tran
 import { BotaoNovaTransacaoComponent } from './componentes/card-transacoes/botao-nova-transacao/botao-nova-transacao.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CurrencyMaskModule } from 'ng2-currency-mask';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +26,18 @@ import { CurrencyMaskModule } from 'ng2-currency-mask';
     AppRoutingModule,
     CurrencyMaskModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp({
+      apiKey: "AIzaSyD0oypSkZtZ7FsjlCoaEvIH5F9SqqQNoPo",
+      authDomain: "fy-nance.firebaseapp.com",
+      projectId: "fy-nance",
+      storageBucket: "fy-nance.appspot.com",
+      messagingSenderId: "542073053146",
+      appId: "1:542073053146:web:76f8ee2ebbd3c92972aae3",
+      measurementId: "G-KCLFRY9JDB"
+    }),
+    AngularFireAuthModule,
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]
