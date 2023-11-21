@@ -28,13 +28,13 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
     FormsModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp({
-      apiKey: "AIzaSyD0oypSkZtZ7FsjlCoaEvIH5F9SqqQNoPo",
-      authDomain: "fy-nance.firebaseapp.com",
-      projectId: "fy-nance",
-      storageBucket: "fy-nance.appspot.com",
-      messagingSenderId: "542073053146",
-      appId: "1:542073053146:web:76f8ee2ebbd3c92972aae3",
-      measurementId: "G-KCLFRY9JDB"
+      apiKey: "AIzaSyDaaL_8chTmePICe53lXAROU_M9szUPIog",
+      authDomain: "fy-nances.firebaseapp.com",
+      projectId: "fy-nances",
+      storageBucket: "fy-nances.appspot.com",
+      messagingSenderId: "617745917017",
+      appId: "1:617745917017:web:d0ac0d543e6a8f4d88bd48",
+      measurementId: "G-Z4RD1EELNN"
     }),
     AngularFireAuthModule,
     AngularFireDatabaseModule
