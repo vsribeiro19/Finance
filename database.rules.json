@@ -1,6 +1,16 @@
 {
+  "hosting": {
+    "public": "dist/finance",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "frameworksBackend": {
+      "region": "europe-west1"
+    },
   "rules": {
-    ".read": false,
-    ".write": false
+    ".read": true,
+    ".write": true
   }
 }
