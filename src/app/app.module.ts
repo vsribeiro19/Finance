@@ -12,10 +12,6 @@ import { CurrencyMaskModule } from 'ng2-currency-mask';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
-import { register } from 'swiper/element/bundle';
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-
-register();
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,8 +41,5 @@ register();
   ],
   providers: [],
   bootstrap: [AppComponent],
-  schemas: [
-    CUSTOM_ELEMENTS_SCHEMA
-  ]
 })
 export class AppModule { }
