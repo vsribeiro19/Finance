@@ -1,8 +1,8 @@
 {
   "name": "Finance",
   "short_name": "Finance",
-  "theme_color": "#1976d2",
-  "background_color": "#fafafa",
+  "theme_color": "#3f3f3f",
+  "background_color": "#3f3f3f",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",
