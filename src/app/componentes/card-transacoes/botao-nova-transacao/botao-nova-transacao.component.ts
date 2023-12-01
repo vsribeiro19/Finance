@@ -8,4 +8,8 @@ import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 })
 export class BotaoNovaTransacaoComponent {
   formValorTransacao = new FormControl();
+
+  adicionarTransacao(){
+    
+  }
 }

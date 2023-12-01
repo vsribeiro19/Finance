@@ -1,8 +1,8 @@
 
 import { StatusCompra, TipoCompra } from "./enums/tipo-compra.enum";
-import { transacoes } from "./models/transacoes.model";
+import { Transacoes } from "./models/transacoes.model";
 
-export const DADOS: transacoes[] = [
+export const DADOS: Transacoes[] = [
     {
         idTransacao: 1,
         nomeCompra: 'Plano Claro',
