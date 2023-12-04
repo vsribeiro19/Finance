@@ -11,9 +11,7 @@ import { TransacoesService } from 'src/app/services/transacoes.service';
 })
 export class BotaoNovaTransacaoComponent implements OnInit {
 
-  constructor(private transacoesService: TransacoesService) {
-
-  }
+  constructor(private transacoesService: TransacoesService) {}
 
   ngOnInit(): void {
     debugger

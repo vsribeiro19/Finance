@@ -1,8 +1,5 @@
-import { Observable } from 'rxjs';
-import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { Injectable } from '@angular/core';
 import { Transacoes } from '../models/transacoes.model';
-import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { Firestore, collection, addDoc, collectionData } from '@angular/fire/firestore';
 import { ToastrService } from 'ngx-toastr';
 @Injectable({
@@ -19,9 +16,7 @@ export class TransacoesService {
 
   obterTransacoes() {
     const transacoes = collection(this.firestore, 'transacoes');
-    collectionData(transacoes).subscribe(val => {
-      console.log('Transações', val);
-    })
+    return collectionData(transacoes, {idField:'idTransacao'});
   }
 
   novaTransacao(transacao: Transacoes) {
