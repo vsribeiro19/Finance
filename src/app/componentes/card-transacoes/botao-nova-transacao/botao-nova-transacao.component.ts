@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { Transacoes } from 'src/app/models/transacoes.model';
 
 @Component({
   selector: 'app-botao-nova-transacao',
@@ -8,8 +9,11 @@ import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 })
 export class BotaoNovaTransacaoComponent {
   formValorTransacao = new FormControl();
-
-  adicionarTransacao(){
+  transacoes!: Transacoes;
+  criarTransacao(f: any) {
+    this.transacoes = f.value;
+    this.transacoes =  this.formValorTransacao;
+    console.log(this.transacoes);
     
   }
 }
