@@ -13,6 +13,21 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { FIREBASE_OPTIONS } from '@angular/fire/compat';
+import { provideFirebaseApp,getApp,initializeApp } from '@angular/fire/app';
+import { getFirestore } from 'firebase/firestore';
+import { provideFirestore } from '@angular/fire/firestore';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDaaL_8chTmePICe53lXAROU_M9szUPIog",
+  authDomain: "fy-nances.firebaseapp.com",
+  databaseURL: "https://fy-nances-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "fy-nances",
+  storageBucket: "fy-nances.appspot.com",
+  messagingSenderId: "617745917017",
+  appId: "1:617745917017:web:d0ac0d543e6a8f4d88bd48",
+  measurementId: "G-Z4RD1EELNN"
+};
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,25 +43,16 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     CurrencyMaskModule,
     FormsModule,
     ReactiveFormsModule,
-    AngularFireModule.initializeApp({
-      apiKey: "AIzaSyDaaL_8chTmePICe53lXAROU_M9szUPIog",
-      authDomain: "fy-nances.firebaseapp.com",
-      projectId: "fy-nances",
-      storageBucket: "fy-nances.appspot.com",
-      messagingSenderId: "617745917017",
-      appId: "1:617745917017:web:d0ac0d543e6a8f4d88bd48",
-      measurementId: "G-Z4RD1EELNN"
-    }),
+    AngularFireModule.initializeApp(firebaseConfig),
+    provideFirestore(() => getFirestore()),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: !isDevMode(),
-      // Register the ServiceWorker as soon as the application is stable
-      // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
     })
   ],
-  providers: [],
+  providers: [{ provide: FIREBASE_OPTIONS, useValue: AngularFireModule.initializeApp }],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

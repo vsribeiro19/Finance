@@ -25,23 +25,23 @@
                     <span class="sr-only">X</span>
                 </button>
             </div>
-            <form #f="ngForm" (ngSubmit)="criarTransacao(f)" class="p-4 md:p-5">
+            <form class="p-4 md:p-5">
                 <div class="grid gap-4 mb-4 grid-cols-2">
                     <div class="col-span-2">
-                        <label for="valorTransacao" class="block text-sm text-[#B9B8B8] dark:text-[#B9B8B8]">Valor da
+                        <label for="valor" class="block text-sm text-[#B9B8B8] dark:text-[#B9B8B8]">Valor da
                             transação</label>
                         <input currencyMask [formControl]="formValorTransacao"
-                            [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',',align:'center' }" name="valorTransacao"
-                            id="valorTransacao" type="tel" inputmode="numeric" pattern="[0-9]*"
+                            [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',',align:'center' }"
+                            name="valor" id="valor" type="tel" inputmode="numeric" pattern="[0-9]*"
                             class="bg-[#383838] text-center border-gray-400 text-[#B9B8B8] text-3xl rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-10 dark:bg-[#383838] dark:focus:border-primary-500"
-                            placeholder="R$ 0,00" required="" ngModel>
+                            placeholder="R$ 0,00" required="" [(ngModel)]="valor">
                     </div>
                     <div class="col-span-2">
-                        <label for="name" class="block text-sm text-[#B9B8B8] dark:text-[#B9B8B8]">Nome da
+                        <label for="nomeTransacao" class="block text-sm text-[#B9B8B8] dark:text-[#B9B8B8]">Nome da
                             transação</label>
-                        <input type="text" name="name" id="name"
+                        <input type="text" name="nomeTransacao" id="nomeTransacao"
                             class="bg-[#383838]  border-gray-400 text-[#B9B8B8] text-md rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                            placeholder="Ex: Restaurante" required="" ngModel>
+                            placeholder="Ex: Restaurante" required="" [(ngModel)]="nomeTransacao">
                     </div>
                     <div class="col-span-2 sm:col-span-1">
                         <label for="category" class="block text-sm text-[#B9B8B8] dark:text-white">Tipo da
@@ -73,7 +73,7 @@
                         </select>
                     </div>
                 </div>
-                <button type="submit"
+                <button type="submit" (click)="novaTransacao()"
                     class="text-white inline-flex items-center bg-[#1957A0] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                     <svg class="me-1 -ms-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
                         xmlns="http://www.w3.org/2000/svg">

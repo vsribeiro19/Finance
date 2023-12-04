@@ -2,8 +2,8 @@ import { StatusCompra, TipoCompra } from "../enums/tipo-compra.enum";
 
 export interface Transacoes {
     idTransacao: number;
-    nomeCompra: string;
-    tipoCompra: TipoCompra;
-    status: StatusCompra;
+    nomeTransacao: string;
+    tipoCompra: string;
+    status: string;
     valor: number;
 }
