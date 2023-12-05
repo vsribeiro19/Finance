@@ -6,22 +6,25 @@ export const DADOS: Transacoes[] = [
     {
         idTransacao: 1,
         nomeTransacao: 'Plano Claro',
-        tipoCompra: 'Débito',
+        tipoCompra: 'Saída',
         status: 'Pendente',
+        formaPagamento: 'Débito',
         valor: 39.90
     },
     {
         idTransacao: 2,
         nomeTransacao: 'Plano Claro',
-        tipoCompra: 'Débito',
+        tipoCompra: 'Entrada',
         status: 'Pendente',
+        formaPagamento: 'Débito',
         valor: 52.59
     },
     {
         idTransacao: 3,
-        nomeTransacao: 'Plano Claro',
-        tipoCompra: 'Débito',
+        nomeTransacao: 'Restaurante',
+        tipoCompra: 'Saída',
         status: 'Pendente',
+        formaPagamento: 'Crédito',
         valor: 150.42
     }
 ]

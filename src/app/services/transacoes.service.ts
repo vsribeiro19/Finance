@@ -1,14 +1,17 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { Transacoes } from '../models/transacoes.model';
 import { Firestore, collection, addDoc, collectionData } from '@angular/fire/firestore';
 import { ToastrService } from 'ngx-toastr';
 @Injectable({
   providedIn: 'root'
 })
-export class TransacoesService {
+export class TransacoesService implements OnInit {
 
   constructor(private firestore: Firestore, private toastr: ToastrService) { }
 
+  ngOnInit(): void {
+    
+  }
   // novaTransacao(transacao: Transacoes) {
   //   const transacoesIntance = collection(this.firestore, 'transacao');
   //   return addDoc(transacoesIntance, transacao);

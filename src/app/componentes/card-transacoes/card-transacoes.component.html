@@ -2,6 +2,7 @@
     <span>Compra</span>
     <span>Tipo Compra</span>
     <span>Status</span>
+    <span>Forma pagamento</span>
     <span>Valor R$</span>
 </div>
 <div *ngIf="dadosTransacao.length; else semTransacoes">
@@ -9,6 +10,7 @@
         <span>{{transacao.nomeTransacao}}</span>
         <span>{{transacao.tipoCompra}}</span>
         <span>{{transacao.status}}</span>
+        <span>{{transacao.formaPagamento}}</span>
         <span>{{transacao.valor}}</span>
     </div>
 </div>

@@ -11,10 +11,9 @@ import { TransacoesService } from 'src/app/services/transacoes.service';
 })
 export class BotaoNovaTransacaoComponent implements OnInit {
 
-  constructor(private transacoesService: TransacoesService) {}
+  constructor(private transacoesService: TransacoesService) { }
 
   ngOnInit(): void {
-    debugger
     this.obterTransacoes();
   }
 
@@ -22,13 +21,16 @@ export class BotaoNovaTransacaoComponent implements OnInit {
   transacoes$ = new Observable<Transacoes[]>();
 
   idTransacao = 0;
+  valor = 0.00;
   nomeTransacao = '';
   tipoCompra = '';
   status = '';
-  valor = 0.00;
+  formaPagamento = '';
 
   obterTransacoes() {
-    return this.transacoesService.obterTransacoes();
+    let getTransacoes =  this.transacoesService.obterTransacoes();
+    console.log('teste', getTransacoes);
+    return getTransacoes;
   }
 
   // novaTransacao(transacao: any) {
@@ -43,7 +45,7 @@ export class BotaoNovaTransacaoComponent implements OnInit {
 
   novaTransacao() {
     if (!this.nomeTransacao || !this.valor) return;
-    this.transacoesService.novaTransacao({ idTransacao: this.idTransacao, nomeTransacao: this.nomeTransacao, tipoCompra: this.tipoCompra, status: this.status, valor: this.valor })
+    this.transacoesService.novaTransacao({ idTransacao: this.idTransacao, valor: this.valor, nomeTransacao: this.nomeTransacao, tipoCompra: this.tipoCompra, status: this.status, formaPagamento: this.formaPagamento })
   }
 
 }

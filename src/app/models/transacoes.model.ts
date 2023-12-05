@@ -5,5 +5,6 @@ export interface Transacoes {
     nomeTransacao: string;
     tipoCompra: string;
     status: string;
+    formaPagamento:string;
     valor: number;
 }
