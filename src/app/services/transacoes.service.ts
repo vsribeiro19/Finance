@@ -1,21 +1,13 @@
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Transacoes } from '../models/transacoes.model';
 import { Firestore, collection, addDoc, collectionData } from '@angular/fire/firestore';
-import { ToastrService } from 'ngx-toastr';
+import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class TransacoesService implements OnInit {
+export class TransacoesService {
 
-  constructor(private firestore: Firestore, private toastr: ToastrService) { }
-
-  ngOnInit(): void {
-    
-  }
-  // novaTransacao(transacao: Transacoes) {
-  //   const transacoesIntance = collection(this.firestore, 'transacao');
-  //   return addDoc(transacoesIntance, transacao);
-  // }
+  constructor(private firestore: Firestore) { }
 
   obterTransacoes() {
     const transacoes = collection(this.firestore, 'transacoes');
@@ -24,13 +16,8 @@ export class TransacoesService implements OnInit {
 
   novaTransacao(transacao: Transacoes) {
     const transacoes = collection(this.firestore, 'transacoes');
-    addDoc(transacoes, transacao).then(() => {
-      this.toastr.success('Transação criada com sucesso!');
+    addDoc(transacoes, transacao)
       this.obterTransacoes();
-    }).catch((err) => {
-      console.log(err);
-      this.toastr.error('Houve um erro ao criar a transação!');
-    })
   }
 
 

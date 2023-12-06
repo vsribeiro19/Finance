@@ -17,7 +17,7 @@ import { provideFirestore } from '@angular/fire/firestore';
 import { TransacoesService } from './services/transacoes.service';
 import { environment } from 'src/environments/environment';
 import { ToastrModule } from 'ngx-toastr';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +36,7 @@ import { ToastrModule } from 'ngx-toastr';
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
     AngularFireDatabaseModule,
+    BrowserAnimationsModule,
     ToastrModule.forRoot(),
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: !isDevMode(),
