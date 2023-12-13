@@ -5,8 +5,8 @@
     <span>Forma pagamento</span>
     <span>Valor R$</span>
 </div>
-<div *ngIf="dadosTransacao.length; else semTransacoes">
-    <div *ngFor="let transacao of dadosTransacao" class="card-transacoes transacoes">
+<div *ngIf="qtdTransacoes.length; else semTransacoes">
+    <div *ngFor="let transacao of transacoes | async" class="card-transacoes transacoes">
         <span>{{transacao.nomeTransacao}}</span>
         <span>{{transacao.tipoCompra}}</span>
         <span>{{transacao.status}}</span>
@@ -14,6 +14,6 @@
         <span>{{transacao.valor}}</span>
     </div>
 </div>
-    <ng-template #semTransacoes>
-        <span id="descSemTransacao" >Não há transações</span>
-    </ng-template>
+<ng-template #semTransacoes>
+    <span id="descSemTransacao">Não há transações</span>
+</ng-template>

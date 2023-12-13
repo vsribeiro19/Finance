@@ -9,7 +9,7 @@ export class TransacoesService {
 
   constructor(private firestore: Firestore) { }
 
-  obterTransacoes() {
+  obterTransacoes():Observable<any> {
     const transacoes = collection(this.firestore, 'transacoes');
     return collectionData(transacoes);
   }
@@ -19,8 +19,6 @@ export class TransacoesService {
     return from(addDoc(transacoes, transacao)).pipe(
       map((docRef: DocumentReference) => {
         const idTransacao = docRef.id;
-        console.log('id', idTransacao);
-
         return { ...transacao, idTransacao } as Transacoes;
       }),
       catchError(error => {

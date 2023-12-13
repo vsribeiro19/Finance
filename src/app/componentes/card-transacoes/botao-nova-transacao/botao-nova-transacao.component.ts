@@ -12,7 +12,16 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class BotaoNovaTransacaoComponent implements OnInit {
   criarTransacaoGroup!: FormGroup;
+  formValorTransacao = new FormControl();
+
+  transacoes?: Transacoes;
   submitted: boolean = false;
+  idTransacao = 0;
+  valor = '';
+  nomeTransacao = '';
+  tipoCompra = '';
+  status = '';
+  formaPagamento = '';
 
   constructor(private transacoesService: TransacoesService, private toastr: ToastrService, private fb: FormBuilder) {
     this.criarTransacaoGroup = this.fb.group({
@@ -25,34 +34,28 @@ export class BotaoNovaTransacaoComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
     this.obterTransacoes();
   }
-  formValorTransacao = new FormControl();
-
-  idTransacao = 0;
-  valor = 0.00;
-  nomeTransacao = '';
-  tipoCompra = '';
-  status = '';
-  formaPagamento = '';
 
   obterTransacoes() {
-    let getTransacoes = this.transacoesService.obterTransacoes();
+    let getTransacoes = this.transacoesService.obterTransacoes().subscribe((parameters: any) => {
+      this.transacoes = parameters;
+    });
+
     return getTransacoes;
   }
+
   novaTransacao() {
     if (this.criarTransacaoGroup.invalid) {
       return;
     }
     const formValue = this.criarTransacaoGroup.value;
+
     const sucesso = () => {
-      console.log(this.toastr);
       this.toastr.success('A transação foi criada com sucesso!');
     }
 
     const falha = () => {
-      console.log('faio');
       this.toastr.error('Houve um problema ao criar a transação');
     }
     this.transacoesService.novaTransacao({
@@ -62,6 +65,7 @@ export class BotaoNovaTransacaoComponent implements OnInit {
       status: formValue.status,
       formaPagamento: formValue.formaPagamento
     }).subscribe(sucesso, falha);
+    this.obterTransacoes();
   }
 
 }

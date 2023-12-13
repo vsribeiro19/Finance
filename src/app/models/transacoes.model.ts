@@ -1,5 +1,3 @@
-import { StatusCompra, TipoCompra } from "../enums/tipo-compra.enum";
-
 export interface Transacoes {
     idTransacao?: string;
     nomeTransacao: string;
