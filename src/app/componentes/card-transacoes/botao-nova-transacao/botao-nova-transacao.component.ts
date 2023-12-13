@@ -25,15 +25,10 @@ export class BotaoNovaTransacaoComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
     this.obterTransacoes();
   }
-
   formValorTransacao = new FormControl();
-
-
-
-
-  transacoes$ = new Observable<Transacoes[]>();
 
   idTransacao = 0;
   valor = 0.00;
@@ -44,18 +39,29 @@ export class BotaoNovaTransacaoComponent implements OnInit {
 
   obterTransacoes() {
     let getTransacoes = this.transacoesService.obterTransacoes();
-    console.log('teste', getTransacoes);
     return getTransacoes;
   }
-
   novaTransacao() {
-    console.log('transação realizada com sucesso', this.criarTransacaoGroup);
+    if (this.criarTransacaoGroup.invalid) {
+      return;
+    }
+    const formValue = this.criarTransacaoGroup.value;
+    const sucesso = () => {
+      console.log(this.toastr);
+      this.toastr.success('A transação foi criada com sucesso!');
+    }
 
-    // if (!this.nomeTransacao || !this.valor) return;
-    // this.transacoesService.novaTransacao({
-    //   idTransacao: this.idTransacao, valor: this.valor,
-    //   nomeTransacao: this.nomeTransacao, tipoCompra: this.tipoCompra, status: this.status, formaPagamento: this.formaPagamento
-    // })
+    const falha = () => {
+      console.log('faio');
+      this.toastr.error('Houve um problema ao criar a transação');
+    }
+    this.transacoesService.novaTransacao({
+      valor: formValue.valor,
+      nomeTransacao: formValue.nomeTransacao,
+      tipoCompra: formValue.tipoCompra,
+      status: formValue.status,
+      formaPagamento: formValue.formaPagamento
+    }).subscribe(sucesso, falha);
   }
 
 }
