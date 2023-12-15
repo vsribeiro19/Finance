@@ -16,8 +16,7 @@ export class BotaoNovaTransacaoComponent implements OnInit {
 
   transacoes?: Transacoes;
   submitted: boolean = false;
-  idTransacao = 0;
-  valor = '';
+  valor = 0.00;
   nomeTransacao = '';
   tipoCompra = '';
   status = '';

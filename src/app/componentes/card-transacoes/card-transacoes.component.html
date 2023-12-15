@@ -11,7 +11,7 @@
         <span>{{transacao.tipoCompra}}</span>
         <span>{{transacao.status}}</span>
         <span>{{transacao.formaPagamento}}</span>
-        <span>{{transacao.valor}}</span>
+        <span>{{transacao.valor | number}}</span>
     </div>
 </div>
 <ng-template #semTransacoes>
