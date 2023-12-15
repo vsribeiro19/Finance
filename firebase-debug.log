@@ -1,0 +1,22 @@
+[debug] [2023-12-15T09:54:21.105Z] ----------------------------------------------------------------------
+[debug] [2023-12-15T09:54:21.109Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Victor\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2023-12-15T09:54:21.109Z] CLI Version:   12.9.1
+[debug] [2023-12-15T09:54:21.110Z] Platform:      win32
+[debug] [2023-12-15T09:54:21.111Z] Node Version:  v18.12.1
+[debug] [2023-12-15T09:54:21.113Z] Time:          Fri Dec 15 2023 06:54:21 GMT-0300 (Horário Padrão de Brasília)
+[debug] [2023-12-15T09:54:21.113Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-12-15T09:54:21.121Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2023-12-15T09:54:21.493Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-12-15T09:54:21.494Z] > authorizing via signed-in user (victorribeiro405@gmail.com)
+[debug] [2023-12-15T09:54:21.495Z] [iam] checking project fy-nance for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update"]
+[debug] [2023-12-15T09:54:21.497Z] > refreshing access token with scopes: []
+[debug] [2023-12-15T09:54:21.499Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-12-15T09:54:21.500Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-12-15T09:54:21.799Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2023-12-15T09:54:21.799Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-12-15T09:54:21.827Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/fy-nance:testIamPermissions [none]
+[debug] [2023-12-15T09:54:21.827Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/fy-nance:testIamPermissions x-goog-quota-user=projects/fy-nance
+[debug] [2023-12-15T09:54:21.828Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/fy-nance:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update"]}
+[debug] [2023-12-15T09:54:21.930Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2023-12-15T09:54:21.930Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
