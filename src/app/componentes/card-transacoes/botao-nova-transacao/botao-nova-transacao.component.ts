@@ -1,9 +1,10 @@
 import { Observable } from 'rxjs';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Inject, LOCALE_ID } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Transacoes } from 'src/app/models/transacoes.model';
 import { TransacoesService } from 'src/app/services/transacoes.service';
 import { ToastrService } from 'ngx-toastr';
+import { DecimalPipe,formatNumber } from '@angular/common';
 
 @Component({
   selector: 'app-botao-nova-transacao',
@@ -16,13 +17,13 @@ export class BotaoNovaTransacaoComponent implements OnInit {
 
   transacoes?: Transacoes;
   submitted: boolean = false;
-  valor = 0.00;
+  valor: number = 0.00;
   nomeTransacao = '';
   tipoCompra = '';
   status = '';
   formaPagamento = '';
 
-  constructor(private transacoesService: TransacoesService, private toastr: ToastrService, private fb: FormBuilder) {
+  constructor(private transacoesService: TransacoesService, private toastr: ToastrService, private fb: FormBuilder,@Inject(LOCALE_ID) private locale: string) {
     this.criarTransacaoGroup = this.fb.group({
       nomeTransacao: ['', Validators.required],
       tipoCompra: ['Selecione', Validators.required],
@@ -49,6 +50,7 @@ export class BotaoNovaTransacaoComponent implements OnInit {
       return;
     }
     const formValue = this.criarTransacaoGroup.value;
+    let valorInput = formatNumber(formValue.valor,this.locale,'1.2-2');
 
     const sucesso = () => {
       this.toastr.success('A transação foi criada com sucesso!');
@@ -58,7 +60,7 @@ export class BotaoNovaTransacaoComponent implements OnInit {
       this.toastr.error('Houve um problema ao criar a transação');
     }
     this.transacoesService.novaTransacao({
-      valor: formValue.valor,
+      valor: valorInput,
       nomeTransacao: formValue.nomeTransacao,
       tipoCompra: formValue.tipoCompra,
       status: formValue.status,

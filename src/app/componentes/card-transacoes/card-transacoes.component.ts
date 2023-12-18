@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { DADOS } from 'src/app/mock-transacoes';
 import { Transacoes } from 'src/app/models/transacoes.model';
 import { TransacoesService } from 'src/app/services/transacoes.service';
+
 @Component({
   selector: 'app-card-transacoes',
   templateUrl: './card-transacoes.component.html',

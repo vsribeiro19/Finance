@@ -18,6 +18,7 @@ import { TransacoesService } from './services/transacoes.service';
 import { environment } from 'src/environments/environment';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DecimalPipe } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +44,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       registrationStrategy: 'registerWhenStable:30000'
     })
   ],
-  providers: [TransacoesService],
+  providers: [TransacoesService,DecimalPipe],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

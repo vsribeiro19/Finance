@@ -4,5 +4,5 @@ export interface Transacoes {
     tipoCompra: string;
     status: string;
     formaPagamento:string;
-    valor: number;
+    valor: any;
 }
