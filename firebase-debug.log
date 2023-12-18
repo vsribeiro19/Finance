@@ -1,0 +1,45 @@
+[debug] [2023-12-18T22:56:20.996Z] ----------------------------------------------------------------------
+[debug] [2023-12-18T22:56:21.002Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Victor\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2023-12-18T22:56:21.003Z] CLI Version:   12.9.1
+[debug] [2023-12-18T22:56:21.004Z] Platform:      win32
+[debug] [2023-12-18T22:56:21.005Z] Node Version:  v18.12.1
+[debug] [2023-12-18T22:56:21.024Z] Time:          Mon Dec 18 2023 19:56:21 GMT-0300 (Horário Padrão de Brasília)
+[debug] [2023-12-18T22:56:21.024Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-12-18T22:56:21.030Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2023-12-18T22:56:21.445Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-12-18T22:56:21.447Z] > authorizing via signed-in user (victorribeiro405@gmail.com)
+[debug] [2023-12-18T22:56:21.448Z] [iam] checking project fy-nance for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update"]
+[debug] [2023-12-18T22:56:21.450Z] > refreshing access token with scopes: []
+[debug] [2023-12-18T22:56:21.453Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-12-18T22:56:21.453Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-12-18T22:56:21.818Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2023-12-18T22:56:21.819Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-12-18T22:56:21.839Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/fy-nance:testIamPermissions [none]
+[debug] [2023-12-18T22:56:21.840Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/fy-nance:testIamPermissions x-goog-quota-user=projects/fy-nance
+[debug] [2023-12-18T22:56:21.840Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/fy-nance:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update"]}
+[debug] [2023-12-18T22:56:21.850Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2023-12-18T22:56:21.851Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2023-12-18T22:56:22.784Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/fy-nance:testIamPermissions 200
+[debug] [2023-12-18T22:56:22.785Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/fy-nance:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update"]}
+[debug] [2023-12-18T22:56:22.788Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/fy-nance [none]
+[debug] [2023-12-18T22:56:23.254Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/fy-nance 200
+[debug] [2023-12-18T22:56:23.254Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/fy-nance {"projectId":"fy-nance","projectNumber":"542073053146","displayName":"financeiro","name":"projects/fy-nance","resources":{"hostingSite":"fy-nance","realtimeDatabaseInstance":"fy-nance-default-rtdb","storageBucket":"fy-nance.appspot.com","locationId":"us-central"},"state":"DELETED","etag":"1_717be862-53cc-42d9-a319-8170a2c2e704"}
+[debug] [2023-12-18T22:56:23.256Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/fy-nance [none]
+[debug] [2023-12-18T22:56:23.716Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/fy-nance 200
+[debug] [2023-12-18T22:56:23.717Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/fy-nance {"projectId":"fy-nance","projectNumber":"542073053146","displayName":"financeiro","name":"projects/fy-nance","resources":{"hostingSite":"fy-nance","realtimeDatabaseInstance":"fy-nance-default-rtdb","storageBucket":"fy-nance.appspot.com","locationId":"us-central"},"state":"DELETED","etag":"1_717be862-53cc-42d9-a319-8170a2c2e704"}
+[info] 
+[info] === Deploying to 'fy-nance'...
+[info] 
+[info] i  deploying database, firestore, hosting 
+[info] i  database: checking rules syntax... 
+[debug] [2023-12-18T22:56:23.731Z] >>> [apiv2][query] GET https://firebasedatabase.googleapis.com/v1beta/projects/fy-nance/locations/-/instances/fy-nance-default-rtdb [none]
+[debug] [2023-12-18T22:56:24.903Z] <<< [apiv2][status] GET https://firebasedatabase.googleapis.com/v1beta/projects/fy-nance/locations/-/instances/fy-nance-default-rtdb 404
+[debug] [2023-12-18T22:56:24.903Z] <<< [apiv2][body] GET https://firebasedatabase.googleapis.com/v1beta/projects/fy-nance/locations/-/instances/fy-nance-default-rtdb {"error":{"code":404,"message":"Project has been deleted.","status":"NOT_FOUND"}}
+[debug] [2023-12-18T22:56:24.906Z] HTTP Error: 404, Project has been deleted.
+[debug] [2023-12-18T22:56:25.143Z] FirebaseError: HTTP Error: 404, Project has been deleted.
+    at responseToError (C:\Users\Victor\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:49:12)
+    at RetryOperation._fn (C:\Users\Victor\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:285:77)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[error] 
+[error] Error: Failed to get instance details for instance: fy-nance-default-rtdb. See firebase-debug.log for more details.
