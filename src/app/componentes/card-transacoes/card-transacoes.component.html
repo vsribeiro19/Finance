@@ -11,7 +11,7 @@
         <span>{{transacao.tipoCompra === 'S' ? 'Saída' : 'Entrada'}}</span>
         <span>{{transacao.status === 'Pg' ? 'Pago' : 'Pendente'}}</span>
         <span>{{transacao.formaPagamento === 'V' ? 'À vista' : 'Crédito'}}</span>
-        <span>R$ {{transacao.valor | number}}</span>
+        <span>R$ {{ transacao.valor | number: "1.2-2":"pt-BR" }}</span>
 
     </div>
 </div>

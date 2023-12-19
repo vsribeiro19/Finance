@@ -11,14 +11,19 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CurrencyMaskModule } from 'ng2-currency-mask';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { provideFirebaseApp,getApp,initializeApp } from '@angular/fire/app';
+import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
 import { getFirestore } from 'firebase/firestore';
 import { provideFirestore } from '@angular/fire/firestore';
 import { TransacoesService } from './services/transacoes.service';
 import { environment } from 'src/environments/environment';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { DecimalPipe } from '@angular/common';
+import { DecimalPipe, registerLocaleData } from '@angular/common';
+import { LOCALE_ID } from '@angular/core';
+import localePt from '@angular/common/locales/pt';
+
+registerLocaleData(localePt);
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +49,7 @@ import { DecimalPipe } from '@angular/common';
       registrationStrategy: 'registerWhenStable:30000'
     })
   ],
-  providers: [TransacoesService,DecimalPipe],
+  providers: [TransacoesService, DecimalPipe, { provide: LOCALE_ID, useValue: 'pt-BR' }],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

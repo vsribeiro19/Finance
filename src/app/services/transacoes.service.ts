@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Transacoes } from '../models/transacoes.model';
 import { Firestore, collection, addDoc, collectionData, DocumentReference } from '@angular/fire/firestore';
-import { Observable, catchError, from, map } from 'rxjs';
+import { Observable, catchError, from, map, tap } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -18,6 +18,7 @@ export class TransacoesService {
     const transacoes = collection(this.firestore, 'transacoes');
     return from(addDoc(transacoes, transacao)).pipe(
       map((docRef: DocumentReference) => {
+        tap(console.log)
         const idTransacao = docRef.id;
         return { ...transacao, idTransacao } as Transacoes;
       }),
