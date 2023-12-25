@@ -1,6 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Transacoes } from 'src/app/models/transacoes.model';
 import { TransacoesService } from 'src/app/services/transacoes.service';
 import { ToastrService } from 'ngx-toastr';
@@ -12,11 +12,9 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class BotaoNovaTransacaoComponent implements OnInit {
   criarTransacaoGroup!: FormGroup;
-  formValorTransacao = new FormControl();
+  valor = new FormControl();
 
   transacoes?: Transacoes;
-  submitted: boolean = false;
-
 
   constructor(private transacoesService: TransacoesService, private toastr: ToastrService, private fb: FormBuilder) {
     this.criarTransacaoGroup = this.fb.group({
@@ -24,7 +22,7 @@ export class BotaoNovaTransacaoComponent implements OnInit {
       tipoCompra: ['Selecione', Validators.required],
       status: ['Selecione', Validators.required],
       formaPagamento: ['Selecione', Validators.required],
-      valor: ['', Validators.required]
+      valor: [[Validators.required]]
     })
   }
 
@@ -41,19 +39,14 @@ export class BotaoNovaTransacaoComponent implements OnInit {
   }
 
   novaTransacao() {
-    if (this.criarTransacaoGroup.invalid) {
-      this.toastr.warning('Houve um problema ao criar a transação. Tente novamente');
-      console.log(this.criarTransacaoGroup);
-      return;
-    }
     const formValue = this.criarTransacaoGroup.value;
-
+    console.log('formValue', this.criarTransacaoGroup.value);
     const sucesso = () => {
       this.toastr.success('A transação foi criada com sucesso!');
     }
 
     const falha = () => {
-      this.toastr.error('Houve um problema ao criar a transação');
+      this.toastr.error('Houve um problema ao criar a transação. Verifique os campos e tente novamente.');
     }
     this.transacoesService.novaTransacao({
       valor: formValue.valor,

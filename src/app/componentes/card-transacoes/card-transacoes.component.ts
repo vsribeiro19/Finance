@@ -11,6 +11,7 @@ import { TransacoesService } from 'src/app/services/transacoes.service';
 export class CardTransacoesComponent implements OnInit {
   transacoes?: Observable<Transacoes[]>;
   qtdTransacoes = [];
+  total = 0;
   constructor(private transacoesService: TransacoesService) { }
 
   ngOnInit(): void {
@@ -21,11 +22,19 @@ export class CardTransacoesComponent implements OnInit {
   verificaQtdTransacoes() {
     this.transacoesService.obterTransacoes().subscribe((parameters: any) => {
       this.qtdTransacoes = parameters;
+      this.obterSomaTransacoes(this.qtdTransacoes);
+
     });
     return this.qtdTransacoes;
   }
 
+  obterSomaTransacoes(transacoes: any) {
+     this.total = transacoes.reduce(this.somaTransacoes, 0);
+  }
 
+  somaTransacoes(total: any, item: any) {
+    return total + (item.valor);
+  }
 
 
 }
