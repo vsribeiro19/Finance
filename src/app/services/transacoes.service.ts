@@ -9,7 +9,7 @@ export class TransacoesService {
 
   constructor(private firestore: Firestore) { }
 
-  obterTransacoes():Observable<any> {
+  obterTransacoes(): Observable<any> {
     const transacoes = collection(this.firestore, 'transacoes');
     return collectionData(transacoes);
   }

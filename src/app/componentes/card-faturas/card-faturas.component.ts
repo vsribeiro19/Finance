@@ -15,15 +15,13 @@ export class CardFaturasComponent implements OnInit {
 
   ngOnInit(): void {
     this.transacoes = this.transacoesService.obterTransacoes();
-    this.verificaQtdTransacoes;
+    this.verificaQtdTransacoes();
   }
 
   verificaQtdTransacoes() {
     this.transacoesService.obterTransacoes().subscribe((parameters: any) => {
       this.qtdTransacoes = parameters;
       this.obterSomaTransacoes(this.qtdTransacoes);
-      console.log('card faturas', this.obterSomaTransacoes(this.qtdTransacoes));
-      
     });
     return this.qtdTransacoes;
   }
