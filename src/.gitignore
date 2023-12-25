@@ -1,7 +1,7 @@
-environments/
-manifest.webmanifest
+#environments/
+#manifest.webmanifest
 app.module.ts
-node_modules/
-public/
-dist/
-services/
+#node_modules/
+#public/
+#dist/
+#services/
