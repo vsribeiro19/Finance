@@ -1,4 +1,4 @@
-# Finance :money_with_wings:
+# Finance V1.0.0 :money_with_wings:
 
 O Finance é um projeto pessoal que eu tinha como ideia desde a época da faculdade, lá em 2018. A ideia do projeto, naquela época, era fazer um controlador financeiro pessoal, onde a pessoa pudesse colocar os seus ganhos e gastos de forma fácil, sem necessidade de planilhas. Hoje, alguns anos depois, estou conseguindo tirar do papel este projeto que era pra ter sido o meu TCC. Então, está sendo um grande desafio e felicidade estar podendo construir este projeto, diariamente e sozinho, dia após dia.
 
