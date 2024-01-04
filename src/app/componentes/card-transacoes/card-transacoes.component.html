@@ -27,19 +27,19 @@
 </div>
 <div *ngIf="qtdTransacoes.length; else semTransacoes">
   <div *ngFor="let transacao of transacoes | async"
-    class="w-full max-w-md p-4 my-1 bg-gray-800 border-gray-700 rounded-lg shadow sm:p-8">
+    class="w-full sm:max-w-sm h-28 xl:max-w-xl p-4 my-1 bg-gray-800 border-gray-700 rounded-lg shadow sm:p-8">
     <div class="flow-root">
       <ul role="list" class="divide-y divide-gray-700 ">
-        <li class="py-3 sm:py-4">
+        <li>
           <div class="flex items-center">
             <div class="flex-1 min-w-0 ms-4 ">
               <p class="text-sm font-medium text-white truncate">
                 {{transacao.nomeTransacao}}
               </p>
-              <p class="text-sm py-1 text-gray-400 truncate ">
-                {{transacao.status === 'Pg' ? 'Pago' : 'Pendente'}}
+              <p class="text-xs w-12 font-medium me-2 my-1 px-2.5 py-0.5 rounded bg-green-900 text-green-300">
+                <span>{{transacao.status === 'Pg' ? 'Pago' : 'Pendente'}}</span>
               </p>
-              <p class="text-sm text-gray-400 truncate ">
+              <p class="text-xs w-12 font-medium me-2 my-1 px-2.5 py-0.5 rounded bg-yellow-900 text-yellow-300">
                 {{transacao.tipoCompra === 'S' ? 'Saída' : 'Entrada'}}
               </p>
             </div>
