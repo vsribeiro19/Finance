@@ -1,4 +1,4 @@
-<div class="cabecalho-card-transacoes">
+<!-- <div class="cabecalho-card-transacoes">
     <span>Compra</span>
     <span>Tipo Compra</span>
     <span>Status</span>
@@ -17,4 +17,41 @@
 </div>
 <ng-template #semTransacoes>
     <span id="descSemTransacao">Não há transações</span>
+</ng-template> -->
+
+
+
+
+<div class="flex items-center justify-between mb-2">
+  <h5 class="text-xl font-medium leading-none text-yellow-50 ">Transações</h5>
+</div>
+<div *ngIf="qtdTransacoes.length; else semTransacoes">
+  <div *ngFor="let transacao of transacoes | async"
+    class="w-full max-w-md p-4 my-1 bg-gray-800 border-gray-700 rounded-lg shadow sm:p-8">
+    <div class="flow-root">
+      <ul role="list" class="divide-y divide-gray-700 ">
+        <li class="py-3 sm:py-4">
+          <div class="flex items-center">
+            <div class="flex-1 min-w-0 ms-4 ">
+              <p class="text-sm font-medium text-white truncate">
+                {{transacao.nomeTransacao}}
+              </p>
+              <p class="text-sm py-1 text-gray-400 truncate ">
+                {{transacao.status === 'Pg' ? 'Pago' : 'Pendente'}}
+              </p>
+              <p class="text-sm text-gray-400 truncate ">
+                {{transacao.tipoCompra === 'S' ? 'Saída' : 'Entrada'}}
+              </p>
+            </div>
+            <div class="inline-flex text-base font-medium text-white ">
+              R$ {{ transacao.valor | number: "1.2-2":"pt-BR" }}
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<ng-template #semTransacoes>
+  <span id="descSemTransacao">Não há transações</span>
 </ng-template>
