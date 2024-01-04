@@ -23,7 +23,7 @@
 
 
 <div class="flex items-center justify-between mb-2">
-  <h5 class="text-xl font-medium leading-none text-yellow-50 ">Transações</h5>
+  <h5 class="text-lg font-medium leading-none text-gray-300 ">Transações</h5>
 </div>
 <div *ngIf="qtdTransacoes.length; else semTransacoes">
   <div *ngFor="let transacao of transacoes | async"
