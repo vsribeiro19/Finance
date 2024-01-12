@@ -22,12 +22,12 @@
 
 
 
-<div class="flex items-center justify-between mb-2">
+<div class="flex items-center justify-between mb-3">
   <h5 class="text-lg font-medium leading-none text-gray-300 ">Transações</h5>
 </div>
 <div *ngIf="qtdTransacoes.length; else semTransacoes">
   <div *ngFor="let transacao of transacoes | async"
-    class="w-full sm:max-w-sm h-28 xl:max-w-xl p-4 my-1 bg-gray-800 border-gray-700 rounded-lg shadow sm:p-8">
+    class="w-full sm:max-w-sm h-24 xl:max-w-xl p-4 my-2 bg-[#1F1F1F] border-gray-700 rounded-lg shadow sm:p-8">
     <div class="flow-root">
       <ul role="list" class="divide-y divide-gray-700 ">
         <li>
