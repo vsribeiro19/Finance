@@ -30,6 +30,9 @@ export class BotaoNovaTransacaoComponent implements OnInit {
     this.obterTransacoes();
   }
 
+  cancelar() {
+    this.criarTransacaoGroup.reset();
+  }
   obterTransacoes() {
     let getTransacoes = this.transacoesService.obterTransacoes().subscribe((parameters: any) => {
       this.transacoes = parameters;
@@ -56,6 +59,7 @@ export class BotaoNovaTransacaoComponent implements OnInit {
       formaPagamento: formValue.formaPagamento
     }).subscribe(sucesso, falha);
     this.obterTransacoes();
+    this.criarTransacaoGroup.reset();
   }
 
 }
