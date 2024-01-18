@@ -1,8 +1,8 @@
-**/environments/
+environments/
 manifest.webmanifest
 app.module.ts
-**/node_modules/
-**/public/
-**/dist/
-**/services/
-*firestore/
+node_modules/
+public/
+dist/
+services/
+firestore.rules
