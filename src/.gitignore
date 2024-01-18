@@ -5,3 +5,4 @@ app.module.ts
 **/public/
 **/dist/
 **/services/
+*firestore/
