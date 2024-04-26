@@ -1,7 +1,22 @@
-<div id="controls-carousel" class="relative w-full" data-carousel="static">
-    <div class="relative h-36 overflow-hidden rounded-lg md:h-96 lg:h-48">
+<!-- <div  class="relative w-full" > -->
+<div id="controls-carousel" class="relative h-36 overflow-hidden rounded-lg md:h-96 lg:h-48" data-carousel="static">
+    <div>
+        <div class="bg-white p-6 shadow-md rounded-lg" data-carousel-item="active">
+            <h2 class="text-xl font-semibold mb-4">Card 1</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec justo eget felis faucibus aliquam.</p>
+        </div>
 
-        <div class="hidden duration-900 ease-in" data-carousel-item="active">
+        <div class="bg-white p-6 shadow-md rounded-lg hidden sm:block" data-carousel-item>
+            <h2 class="text-xl font-semibold mb-4">Card 2</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec justo eget felis faucibus aliquam.</p>
+        </div>
+
+        <div class="bg-white p-6 shadow-md rounded-lg hidden sm:block" data-carousel-item>
+            <h2 class="text-xl font-semibold mb-4">Card 3</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec justo eget felis faucibus aliquam.</p>
+        </div>
+    </div>
+    <!-- <div class="hidden duration-900 ease-in" data-carousel-item="active">
             <div id="card-fatura-atual" class="cards">
                 <span class="titulo-card">Fatura atual</span>
                 <hr>
@@ -25,8 +40,8 @@
                     <h1>R$ {{ 0 | number: "1.2-2":"pt-BR" }} </h1>
                 </div>
             </div>
-        </div>
-    </div>
+        </div> -->
+
     <button type="button"
         class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
         data-carousel-prev>
@@ -54,56 +69,31 @@
         </span>
     </button>
 </div>
-
-
-<!-- <div class="card">
-    <div class="card-container">
-        <div>
-            <div id="card-total-liquido" class="cards">
-                <span class="titulo-card">Total líquido</span>
-                <hr>
-                <h1>R$ {{ 0 | number: "1.2-2":"pt-BR" }} </h1>
-            </div>
-        </div>
-        <div>
-            <div id="card-fatura-atual" class="cards">
+<!-- </div> -->
+<div class="container mx-auto px-4 py-8">
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div class="bg-white p-6 shadow-md rounded-lg">
+            <div id="card-fatura-atual" class="text-xl font-semibold mb-4">
                 <span class="titulo-card">Fatura atual</span>
                 <hr>
                 <h1>R$ {{ total | number: "1.2-2":"pt-BR" }} </h1>
             </div>
         </div>
-        <div>
+
+        <div class="bg-white p-6 shadow-md rounded-lg hidden sm:block">
+            <div id="card-total-liquido" class="cards">
+                <span class="text-xl font-semibold mb-4">Total líquido</span>
+                <hr>
+                <h1>R$ {{ 0 | number: "1.2-2":"pt-BR" }} </h1>
+            </div>
+        </div>
+
+        <div class="bg-white p-6 shadow-md rounded-lg hidden sm:block">
             <div id="card-proxima-fatura" class="cards">
                 <span class="titulo-card">Próxima fatura</span>
                 <hr>
-                <h1>R$ 356,99 </h1>
+                <h1>R$ {{ 0 | number: "1.2-2":"pt-BR" }} </h1>
             </div>
         </div>
     </div>
-</div> -->
-
-<!-- <body class="bg-gray-100">
-    <div class="container mx-auto px-4 py-8">
-        <header class="text-center mb-8">
-            <h1 class="text-3xl font-semibold">Meus Cards</h1>
-        </header>
-
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <div class="bg-white p-6 shadow-md rounded-lg">
-                <h2 class="text-xl font-semibold mb-4">Card 1</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec justo eget felis faucibus aliquam.</p>
-            </div>
-
-            <div class="bg-white p-6 shadow-md rounded-lg hidden sm:block">
-                <h2 class="text-xl font-semibold mb-4">Card 2</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec justo eget felis faucibus aliquam.</p>
-            </div>
-
-            <div class="bg-white p-6 shadow-md rounded-lg hidden sm:block">
-                <h2 class="text-xl font-semibold mb-4">Card 3</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec justo eget felis faucibus aliquam.</p>
-            </div>
-        </div>
-    </div>
-</body> -->
-
+</div>
