@@ -26,11 +26,13 @@ export class CardFaturasComponent implements OnInit {
     return this.qtdTransacoes;
   }
 
-  obterSomaTransacoes(transacoes: any) {
-    this.total = transacoes.reduce(this.somaTransacoes, 0);
-  }
 
   somaTransacoes(total: any, item: any) {
-    return total + (item.valor);
+    if (item.valor != null) return total + (item.valor);
+  }
+
+  obterSomaTransacoes(transacoes: any) {
+    console.log('teste', transacoes);
+    this.total = transacoes.reduce(this.somaTransacoes, 0);
   }
 }
