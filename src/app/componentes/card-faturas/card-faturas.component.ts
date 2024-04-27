@@ -15,6 +15,10 @@ export class CardFaturasComponent implements OnInit {
 
   ngOnInit(): void {
     this.transacoes = this.transacoesService.obterTransacoes();
+    this.transacoes.subscribe(data => {
+      console.log('this.transacoes', data);
+    });
+
     this.verificaQtdTransacoes();
   }
 
@@ -28,7 +32,7 @@ export class CardFaturasComponent implements OnInit {
 
 
   somaTransacoes(total: any, item: any) {
-    if (item.valor != null) return total + (item.valor);
+    return total + (item.valor);
   }
 
   obterSomaTransacoes(transacoes: any) {

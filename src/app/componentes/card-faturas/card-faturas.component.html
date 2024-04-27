@@ -1,98 +1,22 @@
-<!-- <div  class="relative w-full" > -->
-<div id="controls-carousel" class="relative h-36 overflow-hidden rounded-lg md:h-96 lg:h-48" data-carousel="static">
-    <div>
-        <div class="bg-white p-6 shadow-md rounded-lg" data-carousel-item="active">
-            <h2 class="text-xl font-semibold mb-4">Card 1</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec justo eget felis faucibus aliquam.</p>
-        </div>
-
-        <div class="bg-white p-6 shadow-md rounded-lg hidden sm:block" data-carousel-item>
-            <h2 class="text-xl font-semibold mb-4">Card 2</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec justo eget felis faucibus aliquam.</p>
-        </div>
-
-        <div class="bg-white p-6 shadow-md rounded-lg hidden sm:block" data-carousel-item>
-            <h2 class="text-xl font-semibold mb-4">Card 3</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec justo eget felis faucibus aliquam.</p>
-        </div>
-    </div>
-    <!-- <div class="hidden duration-900 ease-in" data-carousel-item="active">
-            <div id="card-fatura-atual" class="cards">
-                <span class="titulo-card">Fatura atual</span>
+<div class="">
+    <div class="w-full mx-auto">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 h-36">
+            <div class="bg-[#161616] border border-slate-300 p-10 shadow-md rounded-lg">
+                <span class="text-md mb-4 text-white">Fatura atual</span>
                 <hr>
-                <h1>R$ {{ total | number: "1.2-2":"pt-BR" }} </h1>
+                <h1 class="text-3xl mt-3 text-white">R$ {{ total | number: "1.2-2":"pt-BR" }} </h1>
             </div>
-        </div>
-        <div class="hidden duration-900 ease-in" data-carousel-item>
-            <div>
-                <div id="card-total-liquido" class="cards">
-                    <span class="titulo-card">Total líquido</span>
-                    <hr>
-                    <h1>R$ {{ 0 | number: "1.2-2":"pt-BR" }} </h1>
-                </div>
-            </div>
-        </div>
-        <div class="hidden duration-900 ease-in" data-carousel-item>
-            <div>
-                <div id="card-proxima-fatura" class="cards">
-                    <span class="titulo-card">Próxima fatura</span>
-                    <hr>
-                    <h1>R$ {{ 0 | number: "1.2-2":"pt-BR" }} </h1>
-                </div>
-            </div>
-        </div> -->
 
-    <button type="button"
-        class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-        data-carousel-prev>
-        <span
-            class="inline-flex items-center justify-center w-1 h-1 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-            <svg class="w-1 h-1 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M5 1 1 5l4 4" />
-            </svg>
-            <span class="sr-only">Previous</span>
-        </span>
-    </button>
-    <button type="button"
-        class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-        data-carousel-next>
-        <span
-            class="inline-flex items-center justify-center w-1 h-1 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-            <svg class="w-1 h-1 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="m1 9 4-4-4-4" />
-            </svg>
-            <span class="sr-only">Next</span>
-        </span>
-    </button>
-</div>
-<!-- </div> -->
-<div class="container mx-auto px-4 py-8">
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <div class="bg-white p-6 shadow-md rounded-lg">
-            <div id="card-fatura-atual" class="text-xl font-semibold mb-4">
-                <span class="titulo-card">Fatura atual</span>
+            <div class="bg-[#161616] border border-slate-300 p-10 shadow-md rounded-lg hidden sm:block">
+                <span class="text-md mb-4 text-white">Total líquido</span>
                 <hr>
-                <h1>R$ {{ total | number: "1.2-2":"pt-BR" }} </h1>
+                <h1 class="text-3xl mt-3 text-white">R$ {{ total | number: "1.2-2":"pt-BR" }} </h1>
             </div>
-        </div>
 
-        <div class="bg-white p-6 shadow-md rounded-lg hidden sm:block">
-            <div id="card-total-liquido" class="cards">
-                <span class="text-xl font-semibold mb-4">Total líquido</span>
+            <div class="bg-[#161616] border border-slate-300 p-10 shadow-md rounded-lg hidden sm:block">
+                <span class="text-md mb-4 text-white">Próxima fatura</span>
                 <hr>
-                <h1>R$ {{ 0 | number: "1.2-2":"pt-BR" }} </h1>
-            </div>
-        </div>
-
-        <div class="bg-white p-6 shadow-md rounded-lg hidden sm:block">
-            <div id="card-proxima-fatura" class="cards">
-                <span class="titulo-card">Próxima fatura</span>
-                <hr>
-                <h1>R$ {{ 0 | number: "1.2-2":"pt-BR" }} </h1>
+                <h1 class="text-3xl mt-3 text-white">R$ {{ total | number: "1.2-2":"pt-BR" }} </h1>
             </div>
         </div>
     </div>
