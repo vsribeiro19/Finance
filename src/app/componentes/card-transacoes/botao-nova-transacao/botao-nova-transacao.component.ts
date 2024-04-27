@@ -31,7 +31,14 @@ export class BotaoNovaTransacaoComponent implements OnInit {
   }
 
   cancelar() {
-    this.criarTransacaoGroup.reset();
+    // this.criarTransacaoGroup.reset();
+    this.criarTransacaoGroup = this.fb.group({
+      nomeTransacao: '',
+      tipoCompra: '',
+      status: '',
+      formaPagamento: '',
+      valor: 0
+    })
   }
   obterTransacoes() {
     let getTransacoes = this.transacoesService.obterTransacoes().subscribe((parameters: any) => {
@@ -43,23 +50,23 @@ export class BotaoNovaTransacaoComponent implements OnInit {
 
   novaTransacao() {
     const formValue = this.criarTransacaoGroup.value;
-    console.log('formValue', this.criarTransacaoGroup.value);
-    const sucesso = () => {
-      this.toastr.success('A transação foi criada com sucesso!');
-    }
 
-    const falha = () => {
-      this.toastr.error('Houve um problema ao criar a transação. Verifique os campos e tente novamente.');
+    if (this.criarTransacaoGroup.invalid) {
+      this.toastr.error('Não foi possível salvar, tente novamente.');
+      return;
     }
-    this.transacoesService.novaTransacao({
-      valor: formValue.valor,
-      nomeTransacao: formValue.nomeTransacao,
-      tipoCompra: formValue.tipoCompra,
-      status: formValue.status,
-      formaPagamento: formValue.formaPagamento
-    }).subscribe(sucesso, falha);
-    this.obterTransacoes();
-    this.criarTransacaoGroup.reset();
+    if (this.criarTransacaoGroup.valid) {
+      this.toastr.success('A transação foi criada com sucesso!');
+      this.transacoesService.novaTransacao({
+        valor: formValue.valor,
+        nomeTransacao: formValue.nomeTransacao,
+        tipoCompra: formValue.tipoCompra,
+        status: formValue.status,
+        formaPagamento: formValue.formaPagamento
+      });
+      this.obterTransacoes();
+      this.criarTransacaoGroup.reset();
+    }
   }
 
 }
