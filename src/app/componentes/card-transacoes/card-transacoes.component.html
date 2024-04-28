@@ -4,33 +4,46 @@
 <div *ngIf="qtdTransacoes.length; else semTransacoes">
   <div class="relative overflow-x-auto mt-2">
     <table
-      class="w-full text-sm text-left rtl:text-right text-gray-300 rounded-lg border border-gray-200 border-opacity-20">
-      <thead class="text-xs text-gray-300">
+      class="w-full text-sm text-left capitalize text-gray-200  text-opacity-100 border border-gray-200 border-opacity-20">
+      <thead class="text-xs">
         <tr>
-          <th class="px-3 py-3">
+          <th scope="col" class="px-6 py-4">
             Descrição
           </th>
-          <th class="px-3 py-3">
+          <th scope="col" class="px-6 py-4">
+            Horário
+          </th>
+          <th scope="col" class="px-6 py-4">
             Status
           </th>
-          <th class="px-3 py-3">
+          <th scope="col" class="px-6 py-4">
             Valor R$
+          </th>
+          <th scope="col" class="px-6 py-4">
+            Ação
           </th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let transacao of transacoes | async"
-          class="bg-[#111112] border-b border-gray-200 border-opacity-20 ">
-          <th scope="row" class="px-6 py-4 font-medium text-gray-300 whitespace-nowrap dark:text-white">
+          class="bg-[#111112] border-b border-gray-200 border-opacity-20 hover:bg-[#1b1b1d] active:bg-[#141416] cursor-pointer">
+          <td scope="row" class="px-6 py-4 font-medium text-gray-300 ">
             {{ transacao.nomeTransacao }}
-          </th>
-          <td class="px-2 py-2">
-            <span class="text-white border border-gray-200  border-opacity-20">
+          </td>
+          <td class="px-6 py-4 font-medium text-gray-300 ">
+            28/04/2024 09:53:00
+          </td>
+          <td class="px-6 py-4 text-center">
+            <span
+            [ngClass]="transacao.status === 'Pg' ? 'text-[#42845b] font-medium border border-[#42845b] border-opacity-20' : 'text-[#ce7e3c] font-medium border border-[#ce7e3c] border-opacity-20'">
               {{ transacao.status === 'Pg' ? 'Pago' : 'Pendente' }}
             </span>
           </td>
-          <td class="px-2 py-2">
+          <td class="px-6 py-4 text-white">
             R$ {{ transacao.valor | number: "1.2-2":"pt-BR" }}
+          </td>
+          <td class="px-6 py-4 text-white">
+            ...
           </td>
         </tr>
       </tbody>
