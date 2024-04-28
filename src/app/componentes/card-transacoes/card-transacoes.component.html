@@ -1,31 +1,40 @@
-<div class="flex items-center justify-between mb-3">
-  <h5 class="text-lg font-medium leading-none text-gray-300 ">Transações</h5>
+<div class="flex items-center justify-between mt-12">
+  <h5 class="text-md font-medium leading-none text-gray-300 ">Transações</h5>
 </div>
 <div *ngIf="qtdTransacoes.length; else semTransacoes">
-  <div *ngFor="let transacao of transacoes | async"
-    class="w-full md:container sm:max-w-sm h-24 xl:max-w-xl p-4 my-2 bg-[#1F1F1F] border-gray-700 rounded-lg shadow sm:p-8">
-    <div class="flow-root">
-      <ul role="list" class="divide-y divide-gray-700 ">
-        <li>
-          <div class="flex items-center">
-            <div class="flex-1 min-w-0 ms-4 ">
-              <p class="text-md font-medium text-white truncate capitalize">
-                {{transacao.nomeTransacao}}
-              </p>
-              <p class="text-xs w-14 flex font-medium my-1 rounded bg-green-200 text-green-800">
-                <span>{{transacao.status === 'Pg' ? 'Pago' : 'Pendente'}}</span>
-              </p>
-              <p class="text-xs w-14 font-medium rounded bg-yellow-200 text-yellow-800">
-                <span>{{transacao.tipoCompra === 'S' ? 'Saída' : 'Entrada'}}</span>
-              </p>
-            </div>
-            <div class="inline-flex text-lg font-medium text-white ">
-              R$ {{ transacao.valor | number: "1.2-2":"pt-BR" }}
-            </div>
-          </div>
-        </li>
-      </ul>
-    </div>
+  <div class="relative overflow-x-auto mt-2">
+    <table
+      class="w-full text-sm text-left rtl:text-right text-gray-300 rounded-lg border border-gray-200 border-opacity-20">
+      <thead class="text-xs text-gray-300">
+        <tr>
+          <th class="px-3 py-3">
+            Descrição
+          </th>
+          <th class="px-3 py-3">
+            Status
+          </th>
+          <th class="px-3 py-3">
+            Valor R$
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let transacao of transacoes | async"
+          class="bg-[#111112] border-b border-gray-200 border-opacity-20 ">
+          <th scope="row" class="px-6 py-4 font-medium text-gray-300 whitespace-nowrap dark:text-white">
+            {{ transacao.nomeTransacao }}
+          </th>
+          <td class="px-2 py-2">
+            <span class="text-white border border-gray-200  border-opacity-20">
+              {{ transacao.status === 'Pg' ? 'Pago' : 'Pendente' }}
+            </span>
+          </td>
+          <td class="px-2 py-2">
+            R$ {{ transacao.valor | number: "1.2-2":"pt-BR" }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
 <ng-template #semTransacoes>
