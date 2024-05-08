@@ -1,21 +1,7 @@
 <div class="w-full mx-auto">
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 h-36">
-        <div class="bg-[#161616] border border-slate-300 border-opacity-20 p-10 shadow-md rounded-lg">
-            <span class="text-md mb-4 text-white">Fatura atual</span>
-            <hr>
-            <h1 class="text-3xl mt-3 text-white">R$ {{ total | number: "1.2-2":"pt-BR" }} </h1>
-        </div>
-
-        <div class="bg-[#161616] border border-slate-300 border-opacity-20 p-10 shadow-md rounded-lg hidden sm:block">
-            <span class="text-md mb-4 text-white">Total líquido</span>
-            <hr>
-            <h1 class="text-3xl mt-3 text-white">R$ {{ total | number: "1.2-2":"pt-BR" }} </h1>
-        </div>
-
-        <div class="bg-[#161616] border border-slate-300 border-opacity-20 p-10 shadow-md rounded-lg hidden sm:block">
-            <span class="text-md mb-4 text-white">Próxima fatura</span>
-            <hr>
-            <h1 class="text-3xl mt-3 text-white">R$ {{ total | number: "1.2-2":"pt-BR" }} </h1>
-        </div>
+        <app-card-fatura-atual></app-card-fatura-atual>
+        <app-card-fatura-total-liquido></app-card-fatura-total-liquido>
+        <app-card-fatura-proxima-fatura></app-card-fatura-proxima-fatura>
     </div>
 </div>

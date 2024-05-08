@@ -21,6 +21,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DecimalPipe, registerLocaleData } from '@angular/common';
 import { LOCALE_ID } from '@angular/core';
 import localePt from '@angular/common/locales/pt';
+import { CardFaturaAtualComponent } from './componentes/card-faturas/card-fatura-atual/card-fatura-atual.component';
+import { CardFaturaTotalLiquidoComponent } from './componentes/card-faturas/card-fatura-total-liquido/card-fatura-total-liquido.component';
+import { CardFaturaProximaFaturaComponent } from './componentes/card-faturas/card-fatura-proxima-fatura/card-fatura-proxima-fatura.component';
 
 registerLocaleData(localePt);
 
@@ -31,7 +34,10 @@ registerLocaleData(localePt);
     SidebarComponent,
     CardFaturasComponent,
     CardTransacoesComponent,
-    BotaoNovaTransacaoComponent
+    BotaoNovaTransacaoComponent,
+    CardFaturaAtualComponent,
+    CardFaturaTotalLiquidoComponent,
+    CardFaturaProximaFaturaComponent
   ],
   imports: [
     BrowserAnimationsModule,

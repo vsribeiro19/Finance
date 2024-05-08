@@ -14,29 +14,25 @@ export class CardFaturasComponent implements OnInit {
   constructor(private transacoesService: TransacoesService) { }
 
   ngOnInit(): void {
-    this.transacoes = this.transacoesService.obterTransacoes();
-    this.transacoes.subscribe(data => {
-      console.log('this.transacoes', data);
-    });
-
-    this.verificaQtdTransacoes();
+    // this.transacoes = this.transacoesService.obterTransacoes();
+    // this.verificaQtdTransacoes();
   }
 
-  verificaQtdTransacoes() {
-    this.transacoesService.obterTransacoes().subscribe((parameters: any) => {
-      this.qtdTransacoes = parameters;
-      this.obterSomaTransacoes(this.qtdTransacoes);
-    });
-    return this.qtdTransacoes;
-  }
+  // verificaQtdTransacoes() {
+  //   this.transacoesService.obterTransacoes().subscribe((parameters: any) => {
+  //     this.qtdTransacoes = parameters;
+  //     this.obterSomaTransacoes(this.qtdTransacoes);
+  //   });
+  //   return this.qtdTransacoes;
+  // }
 
 
-  somaTransacoes(total: any, item: any) {
-    return total + (item.valor);
-  }
+  // somaTransacoes(total: any, item: any) {
+  //   return total + (item.valor);
+  // }
 
-  obterSomaTransacoes(transacoes: any) {
-    console.log('teste', transacoes);
-    this.total = transacoes.reduce(this.somaTransacoes, 0);
-  }
+  // obterSomaTransacoes(transacoes: any) {
+  //   console.log('teste', transacoes);
+  //   this.total = transacoes.reduce(this.somaTransacoes, 0);
+  // }
 }
