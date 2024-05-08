@@ -13,8 +13,10 @@ Eu sempre fui aquela pessoa que gosta de ter facilmente em mãos os seus gastos 
 ## Stacks
 
 Até o momento está sendo utilizado as seguintes stacks:
-* Framework: Angular.
-* Banco de dados: Firebase.
+
+![](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white) 
+
+![Firebase](https://img.shields.io/badge/firebase-a08021?style=for-the-badge&logo=firebase&logoColor=ffcd34)
 
 ## Curiosidades
 
