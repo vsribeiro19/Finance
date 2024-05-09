@@ -15,7 +15,6 @@ export class CardFaturaAtualComponent {
   constructor(private transacoesService: TransacoesService) { }
 
   ngOnInit(): void {
-    // this.transacoes = this.transacoesService.obterTransacoes();
     this.verificaQtdTransacoes();
   }
 
@@ -26,7 +25,6 @@ export class CardFaturaAtualComponent {
     });
     return this.qtdTransacoes;
   }
-
 
   somaTransacoes(total: any, item: any) {
     return total + (item.valor);
