@@ -35,7 +35,7 @@
           </td>
           <td class="px-6 py-4 text-center">
             <span
-            [ngClass]="transacao.status === 'Pg' ? 'text-[#42845b] font-medium border border-[#42845b] border-opacity-20' : 'text-[#ce7e3c] font-medium border border-[#ce7e3c] border-opacity-20'">
+              [ngClass]="transacao.status === 'Pg' ? 'text-[#42845b] font-medium border border-[#42845b] border-opacity-20' : 'text-[#ce7e3c] font-medium border border-[#ce7e3c] border-opacity-20'">
               {{ transacao.status === 'Pg' ? 'Pago' : 'Pendente' }}
             </span>
           </td>
@@ -43,9 +43,17 @@
             R$ {{ transacao.valor | number: "1.2-2":"pt-BR" }}
           </td>
           <td class="px-6 py-4 text-white">
-            <button mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu de botões com ações editar e excluir">
               <mat-icon>more_vert</mat-icon>
             </button>
+            <mat-menu class="bg-[#111112]" #menu="matMenu">
+              <button class="hover:bg-[#1b1b1d]" mat-menu-item>
+                <span class="text-white">Editar transação</span>
+              </button>
+              <button class="hover:bg-[#1b1b1d]" mat-menu-item>
+                <span class="text-white">Excluir transação</span>
+              </button>
+            </mat-menu>
           </td>
         </tr>
       </tbody>
