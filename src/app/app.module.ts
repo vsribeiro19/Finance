@@ -24,9 +24,9 @@ import localePt from '@angular/common/locales/pt';
 import { CardFaturaAtualComponent } from './componentes/card-faturas/card-fatura-atual/card-fatura-atual.component';
 import { CardFaturaTotalLiquidoComponent } from './componentes/card-faturas/card-fatura-total-liquido/card-fatura-total-liquido.component';
 import { CardFaturaProximaFaturaComponent } from './componentes/card-faturas/card-fatura-proxima-fatura/card-fatura-proxima-fatura.component';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
-import {MatDividerModule} from '@angular/material/divider';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
 
 registerLocaleData(localePt);
 
@@ -49,12 +49,12 @@ registerLocaleData(localePt);
     CurrencyMaskModule,
     FormsModule,
     ReactiveFormsModule,
+    MatIconModule,
+    MatMenuModule,
+    MatButtonModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
     AngularFireDatabaseModule,
-    MatButtonModule,
-    MatIconModule,
-    MatDividerModule,
     ToastrModule.forRoot(),
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: !isDevMode(),
