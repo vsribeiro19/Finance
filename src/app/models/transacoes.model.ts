@@ -5,5 +5,5 @@ export interface Transacoes {
     status: string;
     formaPagamento:string;
     valor: number;
-    statusTransacao: boolean;
+    // statusTransacao: boolean;
 }
