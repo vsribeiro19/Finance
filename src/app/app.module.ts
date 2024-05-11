@@ -27,6 +27,8 @@ import { CardFaturaProximaFaturaComponent } from './componentes/card-faturas/car
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
+import { EditarTransacaoComponent } from './componentes/card-transacoes/editar-transacao/editar-transacao.component';
+
 
 registerLocaleData(localePt);
 
@@ -40,7 +42,8 @@ registerLocaleData(localePt);
     BotaoNovaTransacaoComponent,
     CardFaturaAtualComponent,
     CardFaturaTotalLiquidoComponent,
-    CardFaturaProximaFaturaComponent
+    CardFaturaProximaFaturaComponent,
+    EditarTransacaoComponent
   ],
   imports: [
     BrowserAnimationsModule,
