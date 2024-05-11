@@ -25,7 +25,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let transacao of transacoes | async"
+        <tr *ngFor="let transacao of transacoes$ | async"
           class="bg-[#111112] border-b border-gray-200 border-opacity-20 hover:bg-[#1b1b1d] active:bg-[#141416] cursor-pointer">
           <td scope="row" class="px-6 py-4 font-medium text-gray-300 ">
             {{ transacao.nomeTransacao }}

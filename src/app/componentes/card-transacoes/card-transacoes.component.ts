@@ -9,18 +9,18 @@ import { TransacoesService } from 'src/app/services/transacoes.service';
   styleUrls: ['./card-transacoes.component.scss']
 })
 export class CardTransacoesComponent implements OnInit {
-  transacoes?: Observable<Transacoes[]>;
+  transacoes$?: Observable<Transacoes[]>;
   qtdTransacoes = [];
   constructor(private transacoesService: TransacoesService) { }
 
   ngOnInit(): void {
-    this.transacoes = this.transacoesService.obterTransacoes();
+    this.transacoes$ = this.transacoesService.obterTransacoes();
     this.verificaQtdTransacoes();
   }
 
   verificaQtdTransacoes() {
-    this.transacoesService.obterTransacoes().subscribe((parameters: any) => {
-      this.qtdTransacoes = parameters;
+    this.transacoesService.obterTransacoes().subscribe((response: any) => {
+      this.qtdTransacoes = response;
     });
     return this.qtdTransacoes;
   }
