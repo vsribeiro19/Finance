@@ -21,6 +21,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DecimalPipe, registerLocaleData } from '@angular/common';
 import { LOCALE_ID } from '@angular/core';
 import localePt from '@angular/common/locales/pt';
+import { CardFaturaAtualComponent } from './componentes/card-faturas/card-fatura-atual/card-fatura-atual.component';
+import { CardFaturaTotalLiquidoComponent } from './componentes/card-faturas/card-fatura-total-liquido/card-fatura-total-liquido.component';
+import { CardFaturaProximaFaturaComponent } from './componentes/card-faturas/card-fatura-proxima-fatura/card-fatura-proxima-fatura.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
+import { EditarTransacaoComponent } from './componentes/card-transacoes/editar-transacao/editar-transacao.component';
+
 
 registerLocaleData(localePt);
 
@@ -31,7 +39,11 @@ registerLocaleData(localePt);
     SidebarComponent,
     CardFaturasComponent,
     CardTransacoesComponent,
-    BotaoNovaTransacaoComponent
+    BotaoNovaTransacaoComponent,
+    CardFaturaAtualComponent,
+    CardFaturaTotalLiquidoComponent,
+    CardFaturaProximaFaturaComponent,
+    EditarTransacaoComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -40,6 +52,9 @@ registerLocaleData(localePt);
     CurrencyMaskModule,
     FormsModule,
     ReactiveFormsModule,
+    MatIconModule,
+    MatMenuModule,
+    MatButtonModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
     AngularFireDatabaseModule,
