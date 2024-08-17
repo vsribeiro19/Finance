@@ -25,22 +25,29 @@ export class TransacoesService {
 
   obterTransacoes(): Observable<any> {
     const transacoes = collection(this.firestore, 'transacoes');
+    console.log('transações', transacoes);
     return collectionData(transacoes);
   }
 
-  novaTransacao(transacao: Transacoes): Observable<Transacoes> {
-    const transacoes = collection(this.firestore, 'transacoes');
-    return from(addDoc(transacoes, transacao)).pipe(
-      map((docRef: DocumentReference) => {
-        tap(console.log)
-        const idTransacao = docRef.id;
-        return { ...transacao, idTransacao } as Transacoes;
-      }),
-      catchError(error => {
-        console.error('Erro ao adicionar transação:', error);
-        throw error;
-      })
-    );
+  // novaTransacao(transacao: Transacoes): Observable<Transacoes> {
+  //   const transacoes = collection(this.firestore, 'transacoes');
+  //   return from(addDoc(transacoes, transacao)).pipe(
+  //     map((docRef: DocumentReference) => {
+  //       tap(console.log)
+  //       const idTransacao = docRef.id;
+  //       return { ...transacao, idTransacao } as Transacoes;
+  //     }),
+  //     catchError(error => {
+  //       console.error('Erro ao adicionar transação:', error);
+  //       throw error;
+  //     })
+  //   );
+  // }
+
+  novaTransacao(transacao: Transacoes): any {
+    return from(addDoc(this.ref, transacao));
+    // return from(addDoc(this.ref, transacao)).subscribe(api => {
+    //   console.log('api', api);
   }
 
 
