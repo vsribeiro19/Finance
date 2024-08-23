@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Transacoes } from '../models/transacoes.model';
 import { Firestore, collection, addDoc, collectionData, DocumentReference } from '@angular/fire/firestore';
-import { Observable, catchError, from, map, tap } from 'rxjs';
-import { getDoc, getDocs } from 'firebase/firestore';
+import { Observable, from } from 'rxjs';
+import { doc, getDocs, updateDoc } from 'firebase/firestore';
 import { getFirestore } from 'firebase/firestore';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -29,25 +30,19 @@ export class TransacoesService {
     return collectionData(transacoes);
   }
 
-  // novaTransacao(transacao: Transacoes): Observable<Transacoes> {
-  //   const transacoes = collection(this.firestore, 'transacoes');
-  //   return from(addDoc(transacoes, transacao)).pipe(
-  //     map((docRef: DocumentReference) => {
-  //       tap(console.log)
-  //       const idTransacao = docRef.id;
-  //       return { ...transacao, idTransacao } as Transacoes;
-  //     }),
-  //     catchError(error => {
-  //       console.error('Erro ao adicionar transação:', error);
-  //       throw error;
-  //     })
-  //   );
-  // }
-
-  novaTransacao(transacao: Transacoes): any {
+  novaTransacao(transacao: Transacoes) {
     return from(addDoc(this.ref, transacao));
-    // return from(addDoc(this.ref, transacao)).subscribe(api => {
-    //   console.log('api', api);
+  }
+
+  editarTransacao(transacao: Transacoes, idTransacao: any) {
+    updateDoc(doc(this.firestore, 'transacoes'), idTransacao, {
+      nomeTransacao: transacao.nomeTransacao,
+      tipoCompra: transacao.tipoCompra,
+      status: transacao.status,
+      formaPagamento: transacao.formaPagamento,
+      valor: transacao.valor
+    });
+
   }
 
 
